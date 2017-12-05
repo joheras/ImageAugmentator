@@ -52,8 +52,8 @@ class FolderLinearSemanticSegmentationAugmentor:
         self.generators.append(generator)
 
     def readImagesAndAnnotations(self):
-        self.imagePaths = list(paths.list_images(self.imagesPath))
-        self.labelPaths = list(paths.list_images(self.labelsPath))
+        self.imagePaths = list(paths.list_files(self.imagesPath,validExts=(".jpg", ".jpeg", ".png", ".bmp",".tiff",".tif")))
+        self.labelPaths = list(paths.list_files(self.labelsPath,validExts=(".jpg", ".jpeg", ".png", ".bmp",".tiff",".tif")))
         if (len(self.imagePaths)!=len(self.labelPaths)):
             raise Exception("The number of files is different in the folder of images and in the folder of labels")
 
@@ -66,30 +66,30 @@ class FolderLinearSemanticSegmentationAugmentor:
                             for x in enumerate(self.imagePaths))
 
 
-# Example
-# Example
-augmentor = FolderLinearSemanticSegmentationAugmentor(
-    "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/test/",
-    "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/test/dataset-generated/",
-    ".tif"
-)
 
-from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
+# Example
+# augmentor = FolderLinearSemanticSegmentationAugmentor(
+#     "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/test/",
+#     "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/test/dataset-generated/",
+#     ".tif"
+# )
+
+# from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
 # from techniques.bilateralBlurringAugmentationTechnique import bilateralBlurringAugmentationTechnique
 # from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique
 # from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
 # from techniques.flipAugmentationTechnique import flipAugmentationTechnique
 # from techniques.noneAugmentationTechnique import noneAugmentationTechnique
-from generator import Generator
+# from generator import Generator
 # import time
 # augmentor.addGenerator(Generator(noneAugmentationTechnique()))
-augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
+# augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(bilateralBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(gaussianNoiseAugmentationTechnique()))
 # augmentor.addGenerator(Generator(rotateAugmentationTechnique()))
 # augmentor.addGenerator(Generator(flipAugmentationTechnique()))
 # start = time.time()
-augmentor.applyAugmentation()
+# augmentor.applyAugmentation()
 # end = time.time()
 # print(end - start)
 

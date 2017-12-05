@@ -6,6 +6,7 @@ import cv2
 from sklearn.externals.joblib import Parallel, delayed
 from utils.aspectawarepreprocessor import AspectAwarePreprocessor
 from utils.hdf5datasetwriter import HDF5DatasetWriterClassification
+import progressbar
 
 # This class serves to generate images for a classification
 # problem where all the images are organized by folders
@@ -42,42 +43,49 @@ class HDF5LinearClassificationAugmentor:
     def applyAugmentation(self):
         self.readImagesAndAnnotations()
         le = LabelEncoder()
-        writer = HDF5DatasetWriterClassification((len(self.imagePaths),self.width,self.height,3),
+        labels = [p.split(os.path.sep)[-2] for p in self.imagePaths]
+        labels = le.fit_transform(labels)
+        writer = HDF5DatasetWriterClassification((len(self.imagePaths)*len(self.generators),self.width,self.height,3),
                                    self.outputPath)
         # We need to define this function outside to work in parallel.
         writer.storeClassLabels(le.classes_)
-        for i_and_imagePath in enumerate(self.imagePaths):
-            (i, imagePath) = i_and_imagePath
+        widgets = ["Processing images: ", progressbar.Percentage(), " ",
+                   progressbar.Bar(), " ", progressbar.ETA()]
+        pbar = progressbar.ProgressBar(maxval=len(self.imagePaths),
+                                       widgets=widgets).start()
+        for i_and_imagePath in enumerate(zip(self.imagePaths,labels)):
+            (i, (imagePath,label)) = i_and_imagePath
             image = cv2.imread(imagePath)
             image = self.aw.preprocess(image)
-            label = imagePath.split(os.path.sep)[-2]
             for (j, generator) in enumerate(self.generators):
                 newimage = generator.applyForClassification(image)
+                newimage = self.aw.preprocess(newimage)
                 writer.add([newimage],[label])
-
-
+            pbar.update(i)
+        writer.close()
+        pbar.finish()
 
 # # Example
-# augmentor = FolderLinearClassificationAugmentor(
-#     "/home/joheras/datasets/cats_and_dogs_small/train/",
-#     "/home/joheras/datasets/cats_and_dogs_small/data-augmented-parallel/"
-# )
-#
-# from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
+augmentor = HDF5LinearClassificationAugmentor(
+    "/home/joheras/datasets/cats_and_dogs_small/train/",
+    "/home/joheras/datasets/cats_and_dogs_small/database.hdf5",224,224
+)
+
+from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
 # from techniques.bilateralBlurringAugmentationTechnique import bilateralBlurringAugmentationTechnique
 # from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique
-# from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
+from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
 # from techniques.flipAugmentationTechnique import flipAugmentationTechnique
-# from techniques.noneAugmentationTechnique import noneAugmentationTechnique
-# from generator import Generator
+from techniques.noneAugmentationTechnique import noneAugmentationTechnique
+from generator import Generator
 # import time
-# augmentor.addGenerator(Generator(noneAugmentationTechnique()))
-# augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
+augmentor.addGenerator(Generator(noneAugmentationTechnique()))
+augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(bilateralBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(gaussianNoiseAugmentationTechnique()))
-# augmentor.addGenerator(Generator(rotateAugmentationTechnique()))
+augmentor.addGenerator(Generator(rotateAugmentationTechnique()))
 # augmentor.addGenerator(Generator(flipAugmentationTechnique()))
 # start = time.time()
-# augmentor.applyAugmentation()
+augmentor.applyAugmentation()
 # end = time.time()
 # print(end - start)

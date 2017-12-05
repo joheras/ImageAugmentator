@@ -4,15 +4,9 @@ import os
 import cv2
 from sklearn.externals.joblib import Parallel, delayed
 import xml.etree.ElementTree as ET
-from xml.dom import minidom
+from utils import prettify
 
 
-def prettify(elem):
-    """Return a pretty-printed XML string for the Element.
-    """
-    rough_string = ET.tostring(elem, 'utf-8')
-    reparsed = minidom.parseString(rough_string)
-    return reparsed.toprettyxml(indent="  ")
 
 def generateXML(filename,outputPath,w,h,d,boxes):
     top = ET.Element('annotation')
@@ -65,18 +59,20 @@ def readAndGenerateImage(outputPath, generators, i_and_imagePath):
     tree = ET.parse(labelPath)
     root = tree.getroot()
     objects = root.findall('object')
-    if(len(objects)!=1):
-        raise Exception("Since this is a localization problem, the xml should only contain one object")
-    object = objects[0]
-    category = object.find('name').text
-    bndbox = object.find('bndbox')
-    x  = int(bndbox.find('xmin').text)
-    y = int(bndbox.find('ymin').text)
-    w = int(bndbox.find('ymax').text)-y
-    h = int(bndbox.find('xmax').text) - x
+    if(len(objects)>1):
+        raise Exception("The xml should contain at least one object")
+    boxes = []
+    for object in objects:
+        category = object.find('name').text
+        bndbox = object.find('bndbox')
+        x  = int(bndbox.find('xmin').text)
+        y = int(bndbox.find('ymin').text)
+        w = int(bndbox.find('ymax').text)-y
+        h = int(bndbox.find('xmax').text) - x
+        boxes.append((category, (x, y, w, h)))
 
     for (j, generator) in enumerate(generators):
-        (newimage, box) = generator.applyForLocalization(image, (category, (x, y, w, h)))
+        (newimage, boxes) = generator.applyForDetection(image, boxes)
         cv2.imwrite(outputPath + "/" + str(i) + "_" + str(j) + "_" + name,
                     newimage)
         (w,h) =image.shape[:2]
@@ -85,7 +81,7 @@ def readAndGenerateImage(outputPath, generators, i_and_imagePath):
         else:
             d=1
         file = open(outputPath + "/" + str(i) + "_" + str(j) + "_" + name[0:name.rfind(".")]+".xml", "w")
-        file.write(generateXML(str(i) + "_" + str(j) + "_" + name,outputPath,w,h,d,[box]))
+        file.write(generateXML(str(i) + "_" + str(j) + "_" + name,outputPath,w,h,d,boxes))
         file.close()
 
 
@@ -102,7 +98,7 @@ def readAndGenerateImage(outputPath, generators, i_and_imagePath):
 # # |- ...
 # #
 #
-class PascalVOCLinearClassificationAugmentor:
+class PascalVOCLinearDetectionAugmentor:
 
     def __init__(self,inputPath,outputPath):
         IAugmentor.__init__(self)
@@ -126,7 +122,7 @@ class PascalVOCLinearClassificationAugmentor:
 
 #
 # # Example
-# augmentor = PascalVOCLinearClassificationAugmentor(
+# augmentor = PascalVOCLinearDetectionAugmentor(
 #     "/home/joheras/datasets/violines/",
 #     "/home/joheras/datasets/data-augmented-violines/"
 # )

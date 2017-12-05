@@ -3,10 +3,10 @@ from sklearn.preprocessing import LabelEncoder
 from imutils import paths
 import os
 import cv2
-from sklearn.externals.joblib import Parallel, delayed
 from utils.aspectawarepreprocessor import AspectAwarePreprocessor
 from utils.hdf5datasetwriter import HDF5DatasetWriterClassification
-
+import xml.etree.ElementTree as ET
+import progressbar
 # This class serves to generate images for a classification
 # problem where all the images are organized by folders
 # distributed by labels. Example:
@@ -19,7 +19,7 @@ from utils.hdf5datasetwriter import HDF5DatasetWriterClassification
 #    |- image1.jpg
 #    |- image2.jpg
 #    |- ...
-class HDF5LinearClassificationAugmentor:
+class HDF5LinearLocalizationAugmentor:
 
     # All images must have same width and height
     def __init__(self,inputPath,outputPath,width,height):
@@ -42,25 +42,44 @@ class HDF5LinearClassificationAugmentor:
     def applyAugmentation(self):
         self.readImagesAndAnnotations()
         le = LabelEncoder()
-        writer = HDF5DatasetWriterClassification((len(self.imagePaths),self.width,self.height,3),
+        writer = HDF5DatasetWriterClassification((len(self.imagePaths)*len(self.generators),self.width,self.height,3),
                                    self.outputPath)
         # We need to define this function outside to work in parallel.
         writer.storeClassLabels(le.classes_)
+        widgets = ["Processing images: ", progressbar.Percentage(), " ",
+                   progressbar.Bar(), " ", progressbar.ETA()]
+
+        pbar = progressbar.ProgressBar(maxval=len(self.imagePaths),
+                                   widgets=widgets).start()
         for i_and_imagePath in enumerate(self.imagePaths):
             (i, imagePath) = i_and_imagePath
             image = cv2.imread(imagePath)
-            image = self.aw.preprocess(image)
-            label = imagePath.split(os.path.sep)[-2]
-            for (j, generator) in enumerate(self.generators):
-                newimage = generator.applyForClassification(image)
-                writer.add([newimage],[label])
+            name = imagePath.split(os.path.sep)[-1]
+            labelPath = '/'.join(imagePath.split(os.path.sep)[:-1]) + "/" + name[0:name.rfind(".")] + ".xml"
+            tree = ET.parse(labelPath)
+            root = tree.getroot()
+            objects = root.findall('object')
+            if (len(objects) != 1):
+                raise Exception("Since this is a localization problem, the xml should only contain one object")
+            object = objects[0]
+            category = object.find('name').text
+            bndbox = object.find('bndbox')
+            x = int(bndbox.find('xmin').text)
+            y = int(bndbox.find('ymin').text)
+            w = int(bndbox.find('ymax').text) - y
+            h = int(bndbox.find('xmax').text) - x
 
+            for (j, generator) in enumerate(self.generators):
+                (newimage, box) = generator.applyForLocalization(image, (category, (x, y, w, h)))
+                writer.add([newimage],[0,box[1][0],box[1][1],box[1][2],box[1][3]])
+            pbar.update(i)
+        pbar.finish()
         writer.close()
 
 # # Example
 # augmentor = HDF5LinearClassificationAugmentor(
 #     "/home/joheras/datasets/cats_and_dogs_small/train/",
-#     "/home/joheras/datasets/cats_and_dogs_small/data-augmented-parallel/"
+#     "/home/joheras/datasets/cats_and_dogs_small/database.hdf5"
 # )
 #
 # from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique

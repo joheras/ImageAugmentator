@@ -1,4 +1,4 @@
-from detection import detectBox
+from detection import detectBox,detectBoxes
 
 
 
@@ -22,7 +22,7 @@ class Generator(object):
     def applyForDetection(self, image, boxes):
         if (self.changeLabel):
             return [self.technique.apply(image),
-                    detectBox(image, boxes, self.technique.apply)]
+                    detectBoxes(image, boxes, self.technique.apply)]
         else:
             return [self.technique.apply(image), boxes]
 

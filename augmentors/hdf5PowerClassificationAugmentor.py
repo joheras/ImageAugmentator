@@ -20,7 +20,7 @@ import progressbar
 #    |- image1.jpg
 #    |- image2.jpg
 #    |- ...
-class HDF5LinearClassificationAugmentor:
+class HDF5PowerClassificationAugmentor:
 
     # All images must have same width and height
     def __init__(self,inputPath,outputPath,width,height):
@@ -43,7 +43,9 @@ class HDF5LinearClassificationAugmentor:
     def applyAugmentation(self):
         self.readImagesAndAnnotations()
         le = LabelEncoder()
-        writer = HDF5DatasetWriterClassification((len(self.imagePaths),self.width,self.height,3),
+        labels = [p.split(os.path.sep)[-2] for p in self.imagePaths]
+        labels = le.fit_transform(labels)
+        writer = HDF5DatasetWriterClassification((len(self.imagePaths)*(2**(len(self.generators)-1)),self.width,self.height,3),
                                    self.outputPath)
         # We need to define this function outside to work in parallel.
         writer.storeClassLabels(le.classes_)
@@ -51,24 +53,32 @@ class HDF5LinearClassificationAugmentor:
                    progressbar.Bar(), " ", progressbar.ETA()]
         pbar = progressbar.ProgressBar(maxval=len(self.imagePaths),
                                        widgets=widgets).start()
-        for i_and_imagePath in enumerate(self.imagePaths):
-            (i, imagePath) = i_and_imagePath
+        for i_and_imagePath in enumerate(zip(self.imagePaths,labels)):
+            (i, (imagePath,label)) = i_and_imagePath
             image = cv2.imread(imagePath)
             image = self.aw.preprocess(image)
-            label = imagePath.split(os.path.sep)[-2]
+
+            images = [image]
+
             for (j, generator) in enumerate(self.generators):
-                newimage = generator.applyForClassification(image)
-                writer.add([newimage],[label])
-        pbar.update(i)
+                newimages = []
+                for (k,im) in enumerate(images):
+                    newimage = generator.applyForClassification(im)
+                    newimage = self.aw.preprocess(newimage)
+                    writer.add([newimage], [label])
+                    newimages.append(newimage)
+                images = newimages
+
+            pbar.update(i)
         writer.close()
         pbar.finish()
 
 # # Example
-# augmentor = HDF5LinearClassificationAugmentor(
+# augmentor = HDF5PowerClassificationAugmentor(
 #     "/home/joheras/datasets/cats_and_dogs_small/train/",
-#     "/home/joheras/datasets/cats_and_dogs_small/database.hdf5"
+#     "/home/joheras/datasets/cats_and_dogs_small/database.hdf5",224,224
 # )
-#
+
 # from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
 # from techniques.bilateralBlurringAugmentationTechnique import bilateralBlurringAugmentationTechnique
 # from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique

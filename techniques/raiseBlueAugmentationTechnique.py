@@ -5,11 +5,15 @@ import numpy as np
 class raiseBlueAugmentationTechnique(ITechnique):
 
     # Valid values for pover are in the range (0.25,4]
-    def __init__(self,power=0.9):
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if (power<=0.25 or power >4):
+        if parameters["power"]:
+            self.power = parameters["power"]
+        else:
+            self.power = 0.9
+
+        if (self.power<=0.25 or self.power >4):
             raise NameError("Invalid value for power")
-        self.power = power
 
     def apply(self, image):
         if(len(image.shape)!=3):

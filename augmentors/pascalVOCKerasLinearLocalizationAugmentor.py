@@ -49,12 +49,15 @@ def readAndGenerateImage(generators, i_and_imagePath):
 #
 class PascalVOCKerasLinearLocalizationAugmentor:
 
-    def __init__(self,inputPath,batchSize=32):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         self.readImagesAndAnnotations()
         self.generators = []
-        self.batchSize = batchSize
+        if parameters["batchSize"]:
+            self.batchSize = parameters["batchSize"]
+        else:
+            self.batchSize = 32
         self.readImagesAndAnnotations()
 
     def addGenerator(self, generator):

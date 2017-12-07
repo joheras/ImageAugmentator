@@ -4,9 +4,12 @@ import random
 class dropoutAugmentationTechnique(ITechnique):
 
     # percentage of pixels to dropout is a value between 0 and 1
-    def __init__(self,percentage=0.05):
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        self.percentage = percentage
+        if parameters["percentage"]:
+            self.percentage = parameters["percentage"]
+        else:
+            self.percentage = 0.05
 
     def apply(self, image):
         channels = len(image.shape)

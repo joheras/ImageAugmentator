@@ -4,11 +4,14 @@ import cv2
 class flipAugmentationTechnique(ITechnique):
 
     # Valid values for flip are -1,0,1
-    def __init__(self,flip=1):
+    def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if (not(flip in [-1,1,0])):
+        if parameters["flip"]:
+            self.flip = parameters["flip"]
+        else:
+            self.flip = 1
+        if (not(self.flip in [-1,1,0])):
             raise NameError("Invalid value for flip")
-        self.flip = flip
 
     def apply(self, image):
         flipped = cv2.flip(image, self.flip)

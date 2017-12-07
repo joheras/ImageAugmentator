@@ -22,15 +22,26 @@ import progressbar
 class HDF5LinearLocalizationAugmentor:
 
     # All images must have same width and height
-    def __init__(self,inputPath,outputPath,width,height):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         # output path represents the h5py file where dataset will be stored
-        self.outputPath = outputPath
+        # output path represents the h5py file where dataset will be stored
+        if parameters["outputPath"]:
+            self.outputPath = parameters["outputPath"]
+        else:
+            raise ValueError("You should provide an output path in the parameters")
+
         self.generators = []
-        self.width = width
-        self.height = height
-        self.aw = AspectAwarePreprocessor(width,height)
+        if parameters["width"]:
+            self.width = parameters["width"]
+        else:
+            raise ValueError("You should provide a width in the parameters")
+        if parameters["height"]:
+            self.width = parameters["height"]
+        else:
+            raise ValueError("You should provide a height in the parameters")
+        self.aw = AspectAwarePreprocessor(self.width,self.height)
 
     def addGenerator(self, generator):
         self.generators.append(generator)

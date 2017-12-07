@@ -23,15 +23,26 @@ import progressbar
 class HDF5LinearClassificationAugmentor:
 
     # All images must have same width and height
-    def __init__(self,inputPath,outputPath,width,height):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         # output path represents the h5py file where dataset will be stored
-        self.outputPath = outputPath
+        if parameters["outputPath"]:
+            self.outputPath = parameters["outputPath"]
+        else:
+            raise ValueError("You should provide an output path in the parameters")
+
         self.generators = []
-        self.width = width
-        self.height = height
-        self.aw = AspectAwarePreprocessor(width,height)
+        if parameters["width"]:
+            self.width = parameters["width"]
+        else:
+            raise ValueError("You should provide a width in the parameters")
+        if parameters["height"]:
+            self.width = parameters["height"]
+        else:
+            raise ValueError("You should provide a height in the parameters")
+
+        self.aw = AspectAwarePreprocessor(self.width,self.height)
 
     def addGenerator(self, generator):
         self.generators.append(generator)
@@ -66,26 +77,26 @@ class HDF5LinearClassificationAugmentor:
         pbar.finish()
 
 # # Example
-augmentor = HDF5LinearClassificationAugmentor(
-    "/home/joheras/datasets/cats_and_dogs_small/train/",
-    "/home/joheras/datasets/cats_and_dogs_small/database.hdf5",224,224
-)
+# augmentor = HDF5LinearClassificationAugmentor(
+#     "/home/joheras/datasets/cats_and_dogs_small/train/",
+#     "/home/joheras/datasets/cats_and_dogs_small/database.hdf5",224,224
+# )
 
-from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
+# from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
 # from techniques.bilateralBlurringAugmentationTechnique import bilateralBlurringAugmentationTechnique
 # from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique
-from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
+# from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
 # from techniques.flipAugmentationTechnique import flipAugmentationTechnique
-from techniques.noneAugmentationTechnique import noneAugmentationTechnique
-from generator import Generator
+# from techniques.noneAugmentationTechnique import noneAugmentationTechnique
+# from generator import Generator
 # import time
-augmentor.addGenerator(Generator(noneAugmentationTechnique()))
-augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
+# augmentor.addGenerator(Generator(noneAugmentationTechnique()))
+# augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(bilateralBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(gaussianNoiseAugmentationTechnique()))
-augmentor.addGenerator(Generator(rotateAugmentationTechnique()))
+# augmentor.addGenerator(Generator(rotateAugmentationTechnique()))
 # augmentor.addGenerator(Generator(flipAugmentationTechnique()))
 # start = time.time()
-augmentor.applyAugmentation()
+# augmentor.applyAugmentation()
 # end = time.time()
 # print(end - start)

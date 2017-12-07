@@ -5,10 +5,16 @@ import numpy as np
 class gaussianNoiseAugmentationTechnique(ITechnique):
 
 
-    def __init__(self,mean=0,sigma=10):
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        self.mean = mean
-        self.sigma=sigma
+        if parameters["mean"]:
+            self.mean = parameters["mean"]
+        else:
+            self.mean = 0
+        if parameters["sigma"]:
+            self.sigma = parameters["sigma"]
+        else:
+            self.sigma = 10
 
     def apply(self, image):
         im = np.zeros(image.shape, np.uint8)

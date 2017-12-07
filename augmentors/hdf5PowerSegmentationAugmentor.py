@@ -22,18 +22,31 @@ from utils.hdf5datasetwriter import HDF5DatasetWriterSegmentation
 class HDF5PowerSegmentationAugmentor:
 
     # All images must have same width and height
-    def __init__(self,inputPath,outputPath,width,height,labelsExtension=".tiff"):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         self.imagesPath = inputPath + "images/"
         self.labelsPath = inputPath + "labels/"
         # output path represents the folder where the images will be stored
-        self.outputPath = outputPath
+        if parameters["outputPath"]:
+            self.outputPath = parameters["outputPath"]
+        else:
+            raise ValueError("You should provide an output path in the parameters")
+
         self.generators = []
-        self.labelsExtension = labelsExtension
-        self.width = width
-        self.height = height
-        self.aw = AspectAwarePreprocessor(width,height)
+        if parameters["width"]:
+            self.width = parameters["width"]
+        else:
+            raise ValueError("You should provide a width in the parameters")
+        if parameters["height"]:
+            self.width = parameters["height"]
+        else:
+            raise ValueError("You should provide a height in the parameters")
+        if parameters["labelsExtension"]:
+            self.labelsExtension = parameters["labelsExtension"]
+        else:
+            self.labelsExtension = ".tiff"
+        self.aw = AspectAwarePreprocessor(self.width, self.height)
 
     def addGenerator(self, generator):
         self.generators.append(generator)
@@ -87,28 +100,28 @@ class HDF5PowerSegmentationAugmentor:
 
 
 # Example
-augmentor = HDF5PowerSegmentationAugmentor(
-    "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/test/",
-    "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/maps.hdf5",
-    224,224,".tif"
-)
+# augmentor = HDF5PowerSegmentationAugmentor(
+#     "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/test/",
+#     "/home/joheras/pythonprojects/ssai-cnn/maps/mass_buildings/maps.hdf5",
+#     224,224,".tif"
+# )
 #
-from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
+# from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
 # from techniques.bilateralBlurringAugmentationTechnique import bilateralBlurringAugmentationTechnique
-from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique
+# from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique
 # from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
 # from techniques.flipAugmentationTechnique import flipAugmentationTechnique
-from techniques.noneAugmentationTechnique import noneAugmentationTechnique
-from generator import Generator
+# from techniques.noneAugmentationTechnique import noneAugmentationTechnique
+# from generator import Generator
 # import time
-augmentor.addGenerator(Generator(noneAugmentationTechnique()))
-augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
+# augmentor.addGenerator(Generator(noneAugmentationTechnique()))
+# augmentor.addGenerator(Generator(averageBlurringAugmentationTechnique()))
 # augmentor.addGenerator(Generator(bilateralBlurringAugmentationTechnique()))
-augmentor.addGenerator(Generator(gaussianNoiseAugmentationTechnique()))
+# augmentor.addGenerator(Generator(gaussianNoiseAugmentationTechnique()))
 # augmentor.addGenerator(Generator(rotateAugmentationTechnique()))
 # augmentor.addGenerator(Generator(flipAugmentationTechnique()))
 # start = time.time()
-augmentor.applyAugmentation()
+# augmentor.applyAugmentation()
 # end = time.time()
 # print(end - start)
 

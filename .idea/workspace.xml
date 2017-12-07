@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d696dd83-dffa-4c66-a426-b7b319753577" name="Default" comment="" />
+    <list default="true" id="d696dd83-dffa-4c66-a426-b7b319753577" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/augment.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/augmentors/augmentorFactory.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate_sample.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mosaic.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techniques/techniqueFactory.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/dataset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/__init__.py" afterPath="$PROJECT_DIR$/augmentors/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/folderKerasLinearClassificationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/folderKerasLinearClassificationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/folderKerasSemanticSegmentationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/folderKerasSemanticSegmentationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/folderLinearClassificationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/folderLinearClassificationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/folderLinearSemanticSegmentationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/folderLinearSemanticSegmentationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/hdf5LinearClassificationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/hdf5LinearClassificationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/hdf5LinearLocalizationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/hdf5LinearLocalizationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/hdf5LinearSegmentationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/hdf5LinearSegmentationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/hdf5PowerClassificationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/hdf5PowerClassificationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/hdf5PowerSegmentationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/hdf5PowerSegmentationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/pascalVOCKerasLinearDetectionAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/pascalVOCKerasLinearDetectionAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/pascalVOCKerasLinearLocalizationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/pascalVOCKerasLinearLocalizationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/pascalVOCLinearDetectionAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/pascalVOCLinearDetectionAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/augmentors/pascalVOCLinearLocalizationAugmentor.py" afterPath="$PROJECT_DIR$/augmentors/pascalVOCLinearLocalizationAugmentor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/__init__.py" afterPath="$PROJECT_DIR$/techniques/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/averageBlurringAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/averageBlurringAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/bilateralBlurringAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/bilateralBlurringAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/blurringAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/blurringAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/cropAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/cropAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/dropoutAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/dropoutAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/elasticTransformAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/elasticTransformAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/equalizeHistogramAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/equalizeHistogramAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/flipAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/flipAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/gammaCorrectionAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/gammaCorrectionAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/gaussianBlurringAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/gaussianBlurringAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/gaussianNoiseAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/gaussianNoiseAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/medianBlurringAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/medianBlurringAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/noneAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/noneAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/raiseBlueAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/raiseBlueAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/raiseGreenAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/raiseGreenAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/raiseHueAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/raiseHueAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/raiseRedAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/raiseRedAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/raiseSaturationAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/raiseSaturationAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/raiseValueAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/raiseValueAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/resizeAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/resizeAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/rotateAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/rotateAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/saltAndPepperNoiseAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/saltAndPepperNoiseAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/sharpenAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/sharpenAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/shearingAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/shearingAugmentationTechnique.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techniques/translationAugmentationTechnique.py" afterPath="$PROJECT_DIR$/techniques/translationAugmentationTechnique.py" />
+    </list>
     <ignored path="dataAugmentation.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,79 +70,49 @@
     <favorites_list name="dataAugmentation" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="generator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generator.py">
+        <entry file="file://$PROJECT_DIR$/augmentors/generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/detection.py">
+      <file leaf-file-name="augment.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/augment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="folderLinearClassificationAugmentor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/folderLinearClassificationAugmentor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="79" selection-end-column="18" />
+            <state relative-caret-position="816">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#0#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iaugmentor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iaugmentor.py">
+      <file leaf-file-name="generate_sample.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/generate_sample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="folderLinearSemanticSegmentationAugmentor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/folderLinearSemanticSegmentationAugmentor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1272">
-              <caret line="57" column="27" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="27" />
+            <state relative-caret-position="389">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pascalVOCLinearLocalizationAugmentor.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pascalVOCLinearLocalizationAugmentor.py">
+      <file leaf-file-name="mosaic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mosaic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state relative-caret-position="120">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="18" />
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paths.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/cv/local/lib/python2.7/site-packages/imutils/paths.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="68" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="68" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -112,57 +132,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FlipAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/flipAugm.py" />
-        <option value="$PROJECT_DIR$/detection.py" />
-        <option value="$PROJECT_DIR$/raiseHueCorrectionAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseSaturationCorrectionAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseValueCorrectionAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/AugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/Itechnique.py" />
-        <option value="$PROJECT_DIR$/itechnique.py" />
-        <option value="$PROJECT_DIR$/bilateralBlurringAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/elasticTransformAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/Generator.py" />
-        <option value="$PROJECT_DIR$/shearingAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/translationAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/zcaWhiteningAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/sharpenAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/dropoutAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/equalizeHistogramAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/gaussianNoiseAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/saltAndPepperNoiseAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/rotateAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/averageBlurringAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/blurringAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/cropAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/flipAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/gammaCorrectionAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/gaussianBlurringAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/medianBlurringAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseBlueAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseGreenAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseHueAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseRedAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseSaturationAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/raiseValueAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/resizeAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/iaugmentro.py" />
-        <option value="$PROJECT_DIR$/techniques/itechnique.py" />
-        <option value="$PROJECT_DIR$/iaugmentorclassification.py" />
-        <option value="$PROJECT_DIR$/techniques/folderLinearClassificationAugmentor.py" />
-        <option value="$PROJECT_DIR$/techniques/__init__.py" />
-        <option value="$PROJECT_DIR$/techniques/gaussianNoiseAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/techniques/rotateAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/pruebas.py" />
-        <option value="$PROJECT_DIR$/prueba/__init__.py" />
-        <option value="$PROJECT_DIR$/pruebasParallel.py" />
-        <option value="$PROJECT_DIR$/techniques/noneAugmentationTechnique.py" />
-        <option value="$PROJECT_DIR$/iaugmentor.py" />
-        <option value="$PROJECT_DIR$/folderLinearClassificationAugmentor.py" />
         <option value="$PROJECT_DIR$/generator.py" />
-        <option value="$PROJECT_DIR$/folderLinearSemanticSegmentationAugmentor.py" />
-        <option value="$PROJECT_DIR$/pascalVOCLinearLocalizationAugmentor.py" />
+        <option value="$PROJECT_DIR$/pascalVOCLinearDetectionAugmentor.py" />
+        <option value="$PROJECT_DIR$/pascalVOCKerasLinearDetectionAugmentor.py" />
+        <option value="$PROJECT_DIR$/pascalVOCKerasLinearLocalizationAugmentor.py" />
+        <option value="$PROJECT_DIR$/folderKerasSemanticSegmentationAugmentor.py" />
+        <option value="$PROJECT_DIR$/folderKerasLinearClassificationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/folderKerasSemanticSegmentationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/folderKerasLinearClassificationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/folderLinearClassificationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/folderLinearSemanticSegmentationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/hdf5LinearLocalizationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/hdf5LinearSegmentationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/hdf5PowerClassificationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/pascalVOCKerasLinearDetectionAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/pascalVOCKerasLinearLocalizationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/pascalVOCLinearDetectionAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/pascalVOCLinearLocalizationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/augmentorFactory.py" />
+        <option value="$PROJECT_DIR$/augmentors/hdf5LinearClassificationAugmentor.py" />
+        <option value="$PROJECT_DIR$/augmentors/hdf5PowerSegmentationAugmentor.py" />
+        <option value="$PROJECT_DIR$/techniques/techniqueFactory.py" />
+        <option value="$PROJECT_DIR$/techniques/averageBlurringAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/bilateralBlurringAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/blurringAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/cropAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/dropoutAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/equalizeHistogramAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/elasticTransformAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/flipAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/gammaCorrectionAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/gaussianBlurringAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/gaussianNoiseAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/medianBlurringAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/noneAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/raiseBlueAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/raiseGreenAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/raiseHueAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/raiseRedAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/raiseSaturationAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/raiseValueAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/resizeAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/rotateAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/saltAndPepperNoiseAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/sharpenAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/shearingAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/translationAugmentationTechnique.py" />
+        <option value="$PROJECT_DIR$/techniques/__init__.py" />
+        <option value="$PROJECT_DIR$/augmentors/__init__.py" />
+        <option value="$PROJECT_DIR$/augment.py" />
+        <option value="$PROJECT_DIR$/mosaic.py" />
+        <option value="$PROJECT_DIR$/generate_sample.py" />
       </list>
     </option>
   </component>
@@ -197,7 +217,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,6 +237,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,17 +246,35 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/techniques" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/augmentors" />
       <recent name="$PROJECT_DIR$/prueba" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/techniques" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/techniques" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.mosaic">
+    <configuration default="false" name="mosaic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="dataAugmentation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mosaic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -382,6 +420,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.mosaic" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.mosaic" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -406,11 +452,11 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33881578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -435,315 +481,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/techniques/flipAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/pruebas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-1853291230/cv2/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="1858" column="4" selection-start-line="1858" selection-start-column="4" selection-end-line="1858" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/bilateralBlurringAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/blurringAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/cropAugmentationTechnique.py">
+    <entry file="file://$PROJECT_DIR$/augmentors/utils/hdf5datasetwriter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/dropoutAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/elasticTransformAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/equalizeHistogramAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/gammaCorrectionAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/raiseGreenAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/resizeAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/sharpenAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="2" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/translationAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/zcaWhiteningAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/flipAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/gaussianNoiseAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
           <folding>
-            <element signature="e#0#33#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/gaussianBlurringAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/medianBlurringAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#33#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/raiseBlueAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/raiseHueAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/raiseRedAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/raiseSaturationAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/raiseValueAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/saltAndPepperNoiseAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-1853291230/math.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prueba/pruebas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prueba/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pruebasParallel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iaugmentorclassification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#33#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/rotateAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/shearingAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/cv/local/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/noneAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iaugmentor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/itechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techniques/averageBlurringAugmentationTechnique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/folderLinearClassificationAugmentor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="79" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -756,25 +504,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/folderLinearSemanticSegmentationAugmentor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1272">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detection.py">
+    <entry file="file://$PROJECT_DIR$/augmentors/detection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
@@ -782,12 +512,456 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pascalVOCLinearLocalizationAugmentor.py">
+    <entry file="file://$PROJECT_DIR$/augmentors/folderLinearSemanticSegmentationAugmentor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        <state relative-caret-position="403">
+          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/hdf5LinearLocalizationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="42" column="77" selection-start-line="35" selection-start-column="8" selection-end-line="42" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/hdf5PowerClassificationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/hdf5LinearSegmentationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="39" column="42" selection-start-line="36" selection-start-column="8" selection-end-line="39" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/pascalVOCKerasLinearDetectionAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/pascalVOCKerasLinearLocalizationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/pascalVOCLinearDetectionAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/pascalVOCLinearLocalizationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="115" column="51" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/hdf5LinearClassificationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/hdf5PowerSegmentationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1133">
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/augmentorFactory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="79" column="42" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/folderKerasSemanticSegmentationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="46" column="42" selection-start-line="43" selection-start-column="8" selection-end-line="46" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/bilateralBlurringAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/blurringAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="26" selection-start-line="9" selection-start-column="8" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/cropAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="14" column="33" selection-start-line="11" selection-start-column="8" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/dropoutAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/equalizeHistogramAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="2" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/elasticTransformAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/flipAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/gammaCorrectionAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/averageBlurringAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="27" selection-start-line="6" selection-start-column="21" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/gaussianNoiseAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/gaussianBlurringAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="55" selection-start-line="7" selection-start-column="21" selection-end-line="14" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/noneAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/medianBlurringAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="27" selection-start-line="9" selection-start-column="8" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/raiseBlueAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/raiseGreenAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/raiseHueAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/raiseRedAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/raiseSaturationAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/raiseValueAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="28" selection-start-line="9" selection-start-column="8" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/resizeAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="33" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/rotateAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/sharpenAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/saltAndPepperNoiseAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="24" selection-start-line="9" selection-start-column="8" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/shearingAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/translationAugmentationTechnique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/folderKerasLinearClassificationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-581">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/folderLinearClassificationAugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="39" column="0" selection-start-line="35" selection-start-column="8" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/iaugmentor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techniques/techniqueFactory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#85#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/augmentors/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mosaic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_sample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>

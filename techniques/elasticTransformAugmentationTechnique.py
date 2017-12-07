@@ -6,10 +6,16 @@ from scipy.ndimage.filters import gaussian_filter
 
 class elasticTransformAugmentationTechnique(ITechnique):
 
-    def __init__(self,alpha=5,sigma=0.05):
+    def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        self.alpha = alpha
-        self.sigma = sigma
+        if parameters["alpha"]:
+            self.alpha = parameters["alpha"]
+        else:
+            self.alpha = 5
+        if parameters["sigma"]:
+            self.sigma = parameters["sigma"]
+        else:
+            self.sigma = 0.05
 
     def __elastic_transform(self,image):
         """Elastic deformation of images as described in [Simard2003]_.

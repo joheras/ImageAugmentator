@@ -7,14 +7,22 @@ class cropAugmentationTechnique(ITechnique):
     # startFrom indicates the starting point of the cropping,
     # the possible values are TOPLEFT, TOPRIGHT, BOTTOMLEFT,
     # BOTTOMRIGHT, and CENTER
-    def __init__(self,percentage=0.9,startFrom='TOPLEFT'):
+    def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if (percentage <0 or percentage >1):
+        if parameters["percentage"]:
+            self.percentage = parameters["percentage"]
+        else:
+            self.percentage = 0.9
+        if parameters["startFrom"]:
+            self.startFrom = parameters["startFrom"]
+        else:
+            self.startFrom = 'TOPLEFT'
+
+        if (self.percentage <0 or self.percentage >1):
             raise NameError("Invalid value for cropping")
-        if startFrom not in ['TOPLEFT', 'TOPRIGHT', 'BOTTOMLEFT', 'BOTTOMRIGHT', 'CENTER']:
+        if self.startFrom not in ['TOPLEFT', 'TOPRIGHT', 'BOTTOMLEFT', 'BOTTOMRIGHT', 'CENTER']:
             raise NameError("Invalid value for cropping")
-        self.percentage = percentage
-        self.startFrom = startFrom
+
 
     def apply(self, image):
         (w,h) = image.shape[:2]

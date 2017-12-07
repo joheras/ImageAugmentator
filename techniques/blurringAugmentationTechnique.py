@@ -4,12 +4,16 @@ import numpy as np
 
 class blurringAugmentationTechnique(ITechnique):
 
-    # Valid values for kernel are 3,5,7,9, and 11
-    def __init__(self,ksize=3):
+    # Valid values for ksize are 3,5,7,9, and 11
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if (not (ksize in [3,5,7,9,11])):
+        if parameters["ksize"]:
+            self.ksize = parameters["ksize"]
+        else:
+            self.ksize = 3
+        if (not (self.ksize in [3,5,7,9,11])):
             raise NameError("Invalid value for kernel")
-        self.ksize = ksize
+
 
     def apply(self, image):
         blurred = cv2.blur(image, (self.ksize,self.ksize))

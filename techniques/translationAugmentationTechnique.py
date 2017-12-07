@@ -4,10 +4,16 @@ import numpy as np
 
 class translationAugmentationTechnique(ITechnique):
 
-    def __init__(self,x=10,y=10):
+    def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        self.x = x
-        self.y = y
+        if parameters["x"]:
+            self.x = parameters["x"]
+        else:
+            self.x = 10
+        if parameters["y"]:
+            self.y = parameters["y"]
+        else:
+            self.y = 10
 
     def __translate(self,image, x, y):
         # define the translation matrix and perform the translation

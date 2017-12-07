@@ -5,7 +5,7 @@ import numpy as np
 class sharpenAugmentationTechnique(ITechnique):
 
     # Valid values for kernel are 3,5,7,9, and 11
-    def __init__(self):
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
 
     def apply(self, image):

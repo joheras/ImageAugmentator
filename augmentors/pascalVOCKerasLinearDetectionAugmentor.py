@@ -52,13 +52,16 @@ def readAndGenerateImage(generators, i_and_imagePath):
 # # |- ...
 # #
 #
-class PascalVOCLinearDetectionAugmentor:
+class PascalVOCKerasDetectionAugmentor:
 
-    def __init__(self,inputPath,batchSize=32):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         # output path represents the folder where the images will be stored
-        self.batchSize = batchSize
+        if parameters["batchSize"]:
+            self.batchSize = parameters["batchSize"]
+        else:
+            self.batchSize = 32
         self.generators = []
         self.readImagesAndAnnotations()
 

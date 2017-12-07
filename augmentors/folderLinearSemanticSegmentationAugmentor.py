@@ -38,15 +38,21 @@ def readAndGenerateImageSegmentation(outputPath, generators, labelextension, i_a
 # Hence, both images must have the same size.
 class FolderLinearSemanticSegmentationAugmentor:
 
-    def __init__(self,inputPath,outputPath,labelsExtension=".tiff"):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         self.imagesPath = inputPath+"images/"
         self.labelsPath = inputPath + "labels/"
         # output path represents the folder where the images will be stored
-        self.outputPath = outputPath
+        if parameters["outputPath"]:
+            self.outputPath = parameters["outputPath"]
+        else:
+            raise ValueError("You should provide an output path in the parameters")
+        if parameters["labelsExtension"]:
+            self.labelsExtension = parameters["labelsExtension"]
+        else:
+            self.labelsExtension = ".tiff"
         self.generators = []
-        self.labelsExtension=labelsExtension
 
     def addGenerator(self, generator):
         self.generators.append(generator)

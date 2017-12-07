@@ -1,1 +1,1 @@
-from . import *
+from .techniqueFactory import createTechnique

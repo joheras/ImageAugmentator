@@ -100,11 +100,15 @@ def readAndGenerateImage(outputPath, generators, i_and_imagePath):
 #
 class PascalVOCLinearDetectionAugmentor:
 
-    def __init__(self,inputPath,outputPath):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         # output path represents the folder where the images will be stored
-        self.outputPath = outputPath
+        if parameters["outputPath"]:
+            self.outputPath = parameters["outputPath"]
+        else:
+            raise ValueError("You should provide an output path in the parameters")
+
         self.generators = []
 
     def addGenerator(self, generator):

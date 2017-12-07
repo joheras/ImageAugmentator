@@ -1,11 +1,10 @@
 from itechnique import ITechnique
 import cv2
-import numpy as np
 
 class equalizeHistogramAugmentationTechnique(ITechnique):
 
-    # Valid values for kernel are 3,5,7,9, and 11
-    def __init__(self):
+
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
 
     def apply(self, image):
@@ -18,7 +17,7 @@ class equalizeHistogramAugmentationTechnique(ITechnique):
         else:
             return cv2.equalizeHist(image)
 
-technique = equalizeHistogramAugmentationTechnique()
-image = cv2.imread("LPR1.jpg")
-cv2.imshow("resized",technique.apply(image))
-cv2.waitKey(0)
+# technique = equalizeHistogramAugmentationTechnique()
+# image = cv2.imread("LPR1.jpg")
+# cv2.imshow("resized",technique.apply(image))
+# cv2.waitKey(0)

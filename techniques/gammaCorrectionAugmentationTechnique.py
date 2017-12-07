@@ -5,11 +5,15 @@ import numpy as np
 class gammaCorrectionAugmentationTechnique(ITechnique):
 
     # Valid values for gamma are in the range (0,2.5]
-    def __init__(self,gamma=1.5):
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if (gamma<=0 or gamma >2.5):
+        if parameters["gamma"]:
+            self.gamma = parameters["gamma"]
+        else:
+            self.gamma = 1.5
+
+        if (self.gamma<=0 or self.gamma >2.5):
             raise NameError("Invalid value for gamma")
-        self.gamma = gamma
 
     def apply(self, image):
         invGamma = 1.0 / self.gamma

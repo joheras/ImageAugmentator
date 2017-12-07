@@ -1,13 +1,22 @@
 from itechnique import ITechnique
 import cv2
 import numpy as np
+import random
 
 class rotateAugmentationTechnique(ITechnique):
 
-    # Valid angle is in the range [0,360)
-    def __init__(self,angle=45):
+    # Valid angle is in the range [0,360), or it can also be a pair
+    # indicating the range of angles
+    def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        self.angle = angle
+        angle = parameters["angle"]
+
+        if (isinstance(angle,list) and len(angle)==2):
+            self.angle = random.randint(angle[0],angle[1])
+        elif (isinstance(angle,int)):
+            self.angle = angle
+        else:
+            raise ValueError("You must introduce either an integer or a pair")
 
     def __rotate_bound(self,image):
         # grab the dimensions of the image and then determine the

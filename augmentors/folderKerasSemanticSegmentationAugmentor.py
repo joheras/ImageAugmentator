@@ -34,14 +34,22 @@ def readAndGenerateImageSegmentation(image,label,generators):
 # Hence, both images must have the same size.
 class FolderKerasSemanticSegmentationAugmentor:
 
-    def __init__(self,inputPath,labelsExtension=".tiff",batchSize=32):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         self.imagesPath = inputPath+"images/"
         self.labelsPath = inputPath + "labels/"
         # output path represents the folder where the images will be stored
         self.generators = []
-        self.labelsExtension=labelsExtension
+        if parameters["labelsExtension"]:
+            self.labelsExtension=parameters["labelsExtension"]
+        else:
+            self.labelsExtension = ".tiff"
+
+        if parameters["batchSize"]:
+            self.batchSize = parameters["batchSize"]
+        else:
+            self.batchSize = 32
         self.readImagesAndAnnotations()
         self.batchSize = batchSize
 

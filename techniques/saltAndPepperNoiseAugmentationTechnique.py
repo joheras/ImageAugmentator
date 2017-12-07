@@ -5,10 +5,16 @@ import numpy as np
 class saltAndPepperNoiseAugmentationTechnique(ITechnique):
 
 
-    def __init__(self,low=0,up=25):
+    def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        self.low = low
-        self.up=up
+        if parameters["low"]:
+            self.low = parameters["low"]
+        else:
+            self.low = 0
+        if parameters["up"]:
+            self.up = parameters["up"]
+        else:
+            self.up = 25
 
     def apply(self, image):
         im = np.zeros(image.shape, np.uint8)

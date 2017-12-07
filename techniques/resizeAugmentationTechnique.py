@@ -12,12 +12,20 @@ class resizeAugmentationTechnique(ITechnique):
 
     # valid methods for interpolation methods: INTER_AREA, INTER_CUBIC,
     # INTER_NEAREST, INTER_LINEAR, INTER_LANCZOS4
-    def __init__(self, percentage=1.5,method='INTER_AREA'):
+    def __init__(self, parameters):
         ITechnique.__init__(self,True)
+        if parameters["percentage"]:
+            self.percentage = parameters["percentage"]
+        else:
+            self.percentage = 1.5
+        if parameters["method"]:
+            method = parameters["method"]
+        else:
+            method = 'INTER_AREA'
+
         if (not(method in self.methods)):
             raise NameError("Invalid value for method")
         self.method = self.methods[method]
-        self.percentage=percentage
 
     def __resize(self,image, width=None, height=None,inter=cv2.INTER_AREA):
         # initialize the dimensions of the image to be resized and

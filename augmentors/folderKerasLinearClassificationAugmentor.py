@@ -28,11 +28,14 @@ def readAndGenerateImage(image, generators):
 #    |- ...
 class FolderKerasLinearClassificationAugmentor:
 
-    def __init__(self,inputPath,batchSize):
+    def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
         self.inputPath = inputPath
         # output path represents the folder where the images will be stored
-        self.batchSize = batchSize
+        if parameters["batchSize"]:
+            self.batchSize = parameters["batchSize"]
+        else:
+            self.batchSize = 32
         self.generators = []
         self.readImagesAndAnnotations()
 

@@ -8,12 +8,12 @@ class elasticTransformAugmentationTechnique(ITechnique):
 
     def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if parameters["alpha"]:
-            self.alpha = parameters["alpha"]
+        if 'alpha' in parameters.keys():
+            self.alpha = int(parameters["alpha"])
         else:
             self.alpha = 5
-        if parameters["sigma"]:
-            self.sigma = parameters["sigma"]
+        if 'sigma' in parameters.keys():
+            self.sigma = int(parameters["sigma"])
         else:
             self.sigma = 0.05
 

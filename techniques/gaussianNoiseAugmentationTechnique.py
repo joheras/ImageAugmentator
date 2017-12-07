@@ -7,12 +7,12 @@ class gaussianNoiseAugmentationTechnique(ITechnique):
 
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["mean"]:
-            self.mean = parameters["mean"]
+        if 'mean' in parameters.keys():
+            self.mean = int(parameters["mean"])
         else:
             self.mean = 0
-        if parameters["sigma"]:
-            self.sigma = parameters["sigma"]
+        if 'sigma' in parameters.keys():
+            self.sigma = int(parameters["sigma"])
         else:
             self.sigma = 10
 

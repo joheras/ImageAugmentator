@@ -7,8 +7,8 @@ class gammaCorrectionAugmentationTechnique(ITechnique):
     # Valid values for gamma are in the range (0,2.5]
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["gamma"]:
-            self.gamma = parameters["gamma"]
+        if 'gamma' in parameters.keys():
+            self.gamma = int(parameters["gamma"])
         else:
             self.gamma = 1.5
 

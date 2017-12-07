@@ -47,7 +47,7 @@ Techniques = {
     "raise_value":raiseValueAugmentationTechnique,
     "resize": resizeAugmentationTechnique,
     "rotate": rotateAugmentationTechnique,
-    "salt_and_peper":saltAndPepperNoiseAugmentationTechnique,
+    "salt_and_pepper":saltAndPepperNoiseAugmentationTechnique,
     "sharpen":sharpenAugmentationTechnique,
     "shearing": shearingAugmentationTechnique,
     "translation": translationAugmentationTechnique

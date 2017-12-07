@@ -7,12 +7,12 @@ class blurringAugmentationTechnique(ITechnique):
     # Valid values for ksize are 3,5,7,9, and 11
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["ksize"]:
-            self.ksize = parameters["ksize"]
+        if 'ksize' in parameters.keys():
+            self.ksize = int(parameters["ksize"])
         else:
             self.ksize = 3
         if (not (self.ksize in [3,5,7,9,11])):
-            raise NameError("Invalid value for kernel")
+            raise NameError("Invalid value for ksize")
 
 
     def apply(self, image):

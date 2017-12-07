@@ -9,11 +9,11 @@ class cropAugmentationTechnique(ITechnique):
     # BOTTOMRIGHT, and CENTER
     def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if parameters["percentage"]:
-            self.percentage = parameters["percentage"]
+        if 'percentage' in parameters.keys():
+            self.percentage = int(parameters["percentage"])
         else:
             self.percentage = 0.9
-        if parameters["startFrom"]:
+        if 'startFrom' in parameters.keys():
             self.startFrom = parameters["startFrom"]
         else:
             self.startFrom = 'TOPLEFT'

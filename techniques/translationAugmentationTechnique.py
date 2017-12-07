@@ -6,12 +6,12 @@ class translationAugmentationTechnique(ITechnique):
 
     def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if parameters["x"]:
-            self.x = parameters["x"]
+        if 'x' in parameters.keys():
+            self.x = int(parameters["x"])
         else:
             self.x = 10
-        if parameters["y"]:
-            self.y = parameters["y"]
+        if 'y' in parameters.keys():
+            self.y = int(parameters["y"])
         else:
             self.y = 10
 

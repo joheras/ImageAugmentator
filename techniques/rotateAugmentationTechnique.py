@@ -9,7 +9,10 @@ class rotateAugmentationTechnique(ITechnique):
     # indicating the range of angles
     def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        angle = parameters["angle"]
+        if 'angle' in parameters.keys():
+            angle = int(parameters["angle"])
+        else:
+            angle = 22
 
         if (isinstance(angle,list) and len(angle)==2):
             self.angle = random.randint(angle[0],angle[1])

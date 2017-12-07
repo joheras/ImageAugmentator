@@ -6,8 +6,8 @@ class averageBlurringAugmentationTechnique(ITechnique):
     # Valid values for kernel are 3,5,7,9, and 11
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["kernel"]:
-            self.kernel = parameters["kernel"]
+        if 'kernel' in parameters.keys():
+            self.kernel = int(parameters["kernel"])
         else:
             self.kernel = 3
         if (not (self.kernel in [3,5,7,9,11])):

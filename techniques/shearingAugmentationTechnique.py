@@ -4,12 +4,12 @@ import numpy as np
 
 class shearingAugmentationTechnique(ITechnique):
 
-    def __init__(self,parameters,a=0.5):
+    def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if parameters["a"]:
-            self.a = parameters["a"]
+        if 'a' in parameters.keys():
+            self.a = int(parameters["a"])
         else:
-            self.a = 0
+            self.a = 0.5
 
     def __shear(self,image, a):
         # define the translation matrix and perform the translation

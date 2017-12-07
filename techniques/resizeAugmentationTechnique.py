@@ -14,11 +14,11 @@ class resizeAugmentationTechnique(ITechnique):
     # INTER_NEAREST, INTER_LINEAR, INTER_LANCZOS4
     def __init__(self, parameters):
         ITechnique.__init__(self,True)
-        if parameters["percentage"]:
-            self.percentage = parameters["percentage"]
+        if 'percentage' in parameters.keys():
+            self.percentage = int(parameters["percentage"])
         else:
             self.percentage = 1.5
-        if parameters["method"]:
+        if 'method' in parameters.keys():
             method = parameters["method"]
         else:
             method = 'INTER_AREA'

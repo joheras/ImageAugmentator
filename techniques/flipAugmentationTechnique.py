@@ -6,8 +6,8 @@ class flipAugmentationTechnique(ITechnique):
     # Valid values for flip are -1,0,1
     def __init__(self,parameters):
         ITechnique.__init__(self,True)
-        if parameters["flip"]:
-            self.flip = parameters["flip"]
+        if 'flip' in parameters.keys():
+            self.flip = int(parameters["flip"])
         else:
             self.flip = 1
         if (not(self.flip in [-1,1,0])):

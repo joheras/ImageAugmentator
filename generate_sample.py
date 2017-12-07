@@ -23,19 +23,19 @@ generationMode = conf["generation_mode"]
 inputPath = conf["input_path"]
 parameters = conf["parameters"]
 augmentationTechniques = conf["augmentation_techniques"]
-
+print(augmentationTechniques)
 # Second, we create the augmentor
 augmentor = createAugmentor(problem,annotationMode,outputMode,generationMode,inputPath,
                             parameters)
 
-# Third, we load the techniques and add them to the augmentor
-techniques = [createTechnique(technique,parameters) for (technique,parameters) in
-              augmentationTechniques]
 
 # We apply the augmentation
 images = []
-for technique in techniques:
-    images.append(Generator(technique).applyForClassification(image))
+for (technique,parameters) in augmentationTechniques:
+    tech = createTechnique(technique,parameters)
+    im = Generator(tech).applyForClassification(image)
+    cv2.putText(im,technique,(10,10),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,255),1)
+    images.append(im)
 
 cv2.imshow("Mosaic",generateMosaic(images))
 cv2.waitKey(0)

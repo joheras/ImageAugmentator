@@ -6,8 +6,8 @@ class dropoutAugmentationTechnique(ITechnique):
     # percentage of pixels to dropout is a value between 0 and 1
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["percentage"]:
-            self.percentage = parameters["percentage"]
+        if 'percentage' in parameters.keys():
+            self.percentage = int(parameters["percentage"])
         else:
             self.percentage = 0.05
 

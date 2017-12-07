@@ -51,7 +51,6 @@ class FolderKerasSemanticSegmentationAugmentor:
         else:
             self.batchSize = 32
         self.readImagesAndAnnotations()
-        self.batchSize = batchSize
 
     def addGenerator(self, generator):
         self.generators.append(generator)

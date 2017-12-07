@@ -7,8 +7,8 @@ class raiseGreenAugmentationTechnique(ITechnique):
     # Valid values for pover are in the range (0.25,4]
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["power"]:
-            self.power = parameters["power"]
+        if 'power' in parameters.keys():
+            self.power = int(parameters["power"])
         else:
             self.power = 0.9
 

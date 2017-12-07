@@ -9,4 +9,4 @@ class noneAugmentationTechnique(ITechnique):
 
 
     def apply(self, image):
-        return image
+        return image.copy()

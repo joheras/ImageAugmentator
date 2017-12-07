@@ -7,12 +7,12 @@ class saltAndPepperNoiseAugmentationTechnique(ITechnique):
 
     def __init__(self,parameters):
         ITechnique.__init__(self,False)
-        if parameters["low"]:
-            self.low = parameters["low"]
+        if 'low' in parameters.keys():
+            self.low = int(parameters["low"])
         else:
             self.low = 0
-        if parameters["up"]:
-            self.up = parameters["up"]
+        if 'up' in parameters.keys():
+            self.up = int(parameters["up"])
         else:
             self.up = 25
 

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/dataAugmentation.iml" filepath="$PROJECT_DIR$/.idea/dataAugmentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../violines/.idea/violines.iml" filepath="$PROJECT_DIR$/../violines/.idea/violines.iml" />
     </modules>
   </component>
 </project>

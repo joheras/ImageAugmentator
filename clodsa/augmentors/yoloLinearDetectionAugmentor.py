@@ -8,100 +8,57 @@ from utils import prettify
 
 
 
-def generateXML(filename,outputPath,w,h,d,boxes):
-    top = ET.Element('annotation')
-    childFolder = ET.SubElement(top, 'folder')
-    childFolder.text = 'images'
-    childFilename = ET.SubElement(top, 'filename')
-    childFilename.text = filename[0:filename.rfind(".")]
-    childPath = ET.SubElement(top, 'path')
-    childPath.text = outputPath + "/" + filename
-    childSource = ET.SubElement(top, 'source')
-    childDatabase = ET.SubElement(childSource, 'database')
-    childDatabase.text = 'Unknown'
-    childSize = ET.SubElement(top, 'size')
-    childWidth = ET.SubElement(childSize, 'width')
-    childWidth.text = str(w)
-    childHeight = ET.SubElement(childSize, 'height')
-    childHeight.text = str(h)
-    childDepth = ET.SubElement(childSize, 'depth')
-    childDepth.text = str(d)
-    childSegmented = ET.SubElement(top, 'segmented')
-    childSegmented.text = str(0)
-    for box in boxes:
-        (category, (x,y,wb,hb)) = box
-        childObject = ET.SubElement(top, 'object')
-        childName = ET.SubElement(childObject, 'name')
-        childName.text = category
-        childPose = ET.SubElement(childObject, 'pose')
-        childPose.text = 'Unspecified'
-        childTruncated = ET.SubElement(childObject, 'truncated')
-        childTruncated.text = '0'
-        childDifficult = ET.SubElement(childObject, 'difficult')
-        childDifficult.text = '0'
-        childBndBox = ET.SubElement(childObject, 'bndbox')
-        childXmin = ET.SubElement(childBndBox, 'xmin')
-        childXmin.text = str(x)
-        childYmin = ET.SubElement(childBndBox, 'ymin')
-        childYmin.text = str(y)
-        childXmax = ET.SubElement(childBndBox, 'xmax')
-        childXmax.text = str(x+wb)
-        childYmax = ET.SubElement(childBndBox, 'ymax')
-        childYmax.text = str(y+hb)
-    return prettify(top)
-
-#
 def readAndGenerateImage(outputPath, generators, i_and_imagePath):
 
     (i, imagePath) = i_and_imagePath
     image = cv2.imread(imagePath)
+    (wI, hI) = image.shape[:2]
     name = imagePath.split(os.path.sep)[-1]
-    labelPath = '/'.join(imagePath.split(os.path.sep)[:-1]) + "/"+name[0:name.rfind(".")] + ".xml"
-    tree = ET.parse(labelPath)
-    root = tree.getroot()
-    objects = root.findall('object')
+    labelPath = '/'.join(imagePath.split(os.path.sep)[:-1]) + "/"+name[0:name.rfind(".")] + ".txt"
+    lines = [line.rstrip('\n') for line in open(labelPath)]
     #if(len(objects)<1):
     #    raise Exception("The xml should contain at least one object")
     boxes = []
-    for object in objects:
-        category = object.find('name').text
-        bndbox = object.find('bndbox')
-        x  = int(bndbox.find('xmin').text)
-        y = int(bndbox.find('ymin').text)
-        h = int(bndbox.find('ymax').text)-y
-        w = int(bndbox.find('xmax').text) - x
+    for line in lines:
+        components = line.split(" ")
+        category = components[0]
+        x  = int(float(components[1])*wI - float(components[3])*wI/2)
+        y = int(float(components[2])*hI - float(components[4])*hI/2)
+        h = int(float(components[4])*hI)
+        w = int(float(components[3])*wI)
         boxes.append((category, (x, y, w, h)))
-    print(len(boxes))
     for (j, generator) in enumerate(generators):
         (newimage, newboxes) = generator.applyForDetection(image, boxes)
 
         if newboxes is not None:
             cv2.imwrite(outputPath + "/" + str(i) + "_" + str(j) + "_" + name,
                         newimage)
-            (wI,hI) =image.shape[:2]
-            if(len(image.shape)==3):
-                d = 3
-            else:
-                d=1
-            file = open(outputPath + "/" + str(i) + "_" + str(j) + "_" + name[0:name.rfind(".")]+".xml", "w")
-            file.write(generateXML(str(i) + "_" + str(j) + "_" + name,outputPath,wI,hI,d,newboxes))
+
+
+            file = open(outputPath + "/" + str(i) + "_" + str(j) + "_" + name[0:name.rfind(".")]+".txt", "w")
+            for box in newboxes:
+                (category, (x, y, wb, hb)) = box
+                file.write(category + " " + float(x+wb/2)/wI + " " + float(y+hb/2)/hI + " " + str(float(wb)/wI) + " " + str(float(hb)/hI))
+            file.close()
+        else:
+            file = open(outputPath + "/" + str(i) + "_" + str(j) + "_" + name[0:name.rfind(".")] + ".txt", "w")
             file.close()
 
 
     #
-# # This class serves to generate images for a localization
-# # problem where all the images in the given folder, and the labels
-# # are given in the same folder with the same name and using the PASCAL VOC format.
+# # This class serves to generate images for a detection
+# # problem where all the images in the given folder using the JPG format, and the labels
+# # are given in the same folder with the same name and using the YOLO format.
 # # Example:
 # # - Folder
 # # |- image1.jpg
-# # |- image1.xml
+# # |- image1.txt
 # # |- image2.jpg
-# # |- image2.xml
+# # |- image2.txt
 # # |- ...
 # #
 #
-class PascalVOCLinearDetectionAugmentor:
+class yoloLinearDetectionAugmentor:
 
     def __init__(self,inputPath,parameters):
         IAugmentor.__init__(self)
@@ -118,8 +75,8 @@ class PascalVOCLinearDetectionAugmentor:
         self.generators.append(generator)
 
     def readImagesAndAnnotations(self):
-        self.imagePaths = list(paths.list_images(self.inputPath))
-        self.labelPaths = list(paths.list_files(self.inputPath,validExts=(".xml")))
+        self.imagePaths = list(paths.list_files(self.inputPath,validExts=(".jpg", ".jpeg")))
+        self.labelPaths = list(paths.list_files(self.inputPath,validExts=(".txt")))
         if (len(self.imagePaths) != len(self.labelPaths)):
             raise Exception("The number of images is different to the number of annotations")
 
@@ -130,16 +87,16 @@ class PascalVOCLinearDetectionAugmentor:
 
 #
 # # Example
-# augmentor = PascalVOCLinearDetectionAugmentor(
-#     "/home/joheras/datasets/violines/",
-#     "/home/joheras/datasets/data-augmented-violines/"
+# augmentor = yoloLinearDetectionAugmentor(
+#     "/home/joheras/datasets/estomas-yolo/",
+#     {"outputPath": "/home/joheras/datasets/estomas-yolo/"}
 # )
 #
-# from techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
+# from ..techniques.averageBlurringAugmentationTechnique import averageBlurringAugmentationTechnique
 # from techniques.bilateralBlurringAugmentationTechnique import bilateralBlurringAugmentationTechnique
 # from techniques.gaussianNoiseAugmentationTechnique import gaussianNoiseAugmentationTechnique
 # from techniques.rotateAugmentationTechnique import rotateAugmentationTechnique
-# from techniques.flipAugmentationTechnique import flipAugmentationTechnique
+# from ..techniques.flipAugmentationTechnique import flipAugmentationTechnique
 # from techniques.noneAugmentationTechnique import noneAugmentationTechnique
 # from generator import Generator
 # import time
